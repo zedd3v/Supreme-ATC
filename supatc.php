@@ -26,15 +26,15 @@ if (empty($product_id) || empty($style_id) || empty($size_id)) {
 ?>
 <html>
 	<body>
-        <iframe style='display:none;' name='i' id='i'></iframe>
-        <form id='form' action='https://www.supremenewyork.com/shop/<?= $product_id ?>/add.json' method='post' target='i'>
-            <input type='hidden' name='st' value='<?= $style_id ?>'>
-            <input type='hidden' name='s' value='<?= $size_id ?>'>
-            <input type='hidden' name='qty' value='1'>
-        </form>
-        <script>
-            document.getElementById('form').submit();
-            document.getElementById('i').onload = () => { window.location.href = `https://www.supremenewyork.com/checkout?order[terms]=1`; };
+		<iframe style='display:none;' name='i' id='i'></iframe>
+		<form id='form' action='https://www.supremenewyork.com/shop/<?= $product_id ?>/add.json' method='post' target='i'>
+		    <input type='hidden' name='st' value='<?= $style_id ?>'>
+		    <input type='hidden' name='s' value='<?= $size_id ?>'>
+		    <input type='hidden' name='qty' value='1'>
+		</form>
+		<script>
+		    document.getElementById('form').submit();
+		    document.getElementById('i').onload = () => { window.location.href = `https://www.supremenewyork.com/checkout?order[terms]=1`; };
 		</script>
 	</body>
 </html>
